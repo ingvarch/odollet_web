@@ -22,79 +22,91 @@ import { RouterLink } from 'vue-router'
     <div class="policy-container">
       <div class="policy-content">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: August 27, 2025</p>
+        <p class="last-updated">Last updated: April 20, 2026</p>
 
         <section>
           <h2>1. Introduction</h2>
           <p>
-            Odollet ("Odometer Wallet") is a smart, easy-to-use journal for motorcyclists who value order, clarity, and more time on the road. This Privacy Policy explains how we collect, use, and protect your information when you use our app.
+            Odollet ("Odometer Wallet") is a focused logbook for motorcyclists — track mileage, expenses, fuel and maintenance, set service reminders, and, if you choose, sync across your own Apple devices. This Privacy Policy explains what the app does and does not do with your data.
           </p>
         </section>
 
         <section>
-          <h2>2. No Data Collection</h2>
-          <p><strong>We DO NOT collect any personal data.</strong></p>
-          <p><strong>We DO NOT track your usage or behavior.</strong></p>
-          <p><strong>We DO NOT send any data to external servers.</strong></p>
-          <p><strong>We DO NOT use analytics or crash reporting services.</strong></p>
-          <p><strong>We DO NOT access your location, contacts, or other personal information.</strong></p>
+          <h2>2. What We Collect</h2>
+          <ul>
+            <li>We do <strong>not</strong> operate any server. The developer has no access to the data you enter.</li>
+            <li>We do <strong>not</strong> use analytics, crash reporting, or tracking SDKs.</li>
+            <li>We do <strong>not</strong> show advertising and we do <strong>not</strong> integrate with social networks.</li>
+            <li>No account, email, or sign-in is required.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>3. Local Data Storage</h2>
-          <p><strong>All your motorcycle data is stored locally on your device.</strong></p>
-          <p>Ride logs, expenses, and maintenance records stay on your iPhone/iPad.</p>
-          <p>Your motorcycles, custom log types, and settings are saved locally.</p>
-          <p>No data is synchronized with cloud services without your explicit action.</p>
+          <h2>3. Where Your Data Lives</h2>
+          <ul>
+            <li>By default, all motorcycles, log entries, reminders, photos, attachments and settings are stored locally on your device (iOS sandbox, encrypted at rest).</li>
+            <li>When you enable <strong>iCloud Sync</strong> (Settings → iCloud Sync), the same data is replicated through your own private CloudKit database so your other Apple devices can see it. This is end-to-end between you and Apple — we never see the data.</li>
+            <li><strong>Calendar Sync</strong> (optional) writes date-based service reminders into your Apple Calendar via iOS's EventKit. Events stay inside your calendar; the app does not read them back.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>4. Data Export & Backup</h2>
-          <p>You control when to export your data via the backup feature.</p>
-          <p>Exported files contain only the data you've entered.</p>
-          <p>You choose where to store backup files (Files, iCloud, etc.).</p>
-          <p>No automatic backups or data sharing occurs.</p>
-          <p>Imports fully replace existing data, ensuring a clean, consistent log.</p>
+          <h2>4. Permissions the App Asks For</h2>
+          <ul>
+            <li><strong>Notifications</strong> — only used to remind you about upcoming services and expiring insurance/registration. Optional.</li>
+            <li><strong>Photo Library (read)</strong> — only when you pick a hero photo or attach photos to a log entry. Only the images you explicitly pick leave the library.</li>
+            <li><strong>Camera</strong> — only used on demand by the built-in receipt scanner. No photo or video is captured in the background.</li>
+            <li><strong>Calendar</strong> — only requested if you enable Calendar Sync for service reminders. Write-only, scoped to events the app creates.</li>
+            <li><strong>iCloud (CloudKit)</strong> — only if you enable iCloud Sync. Uses your Apple ID's private database. No public or shared CloudKit scopes.</li>
+            <li><strong>Siri / Shortcuts</strong> — on-device intents that act on the active motorcycle; iOS decides what Siri learns from your usage, not the app.</li>
+            <li><strong>Files</strong> — only when you import or export a backup.</li>
+            <li>No location, contacts, microphone, HealthKit, or motion data is accessed.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>5. App Permissions</h2>
-          <p>Push notifications: Only for monthly/yearly reminders (optional).</p>
-          <p>Files access: Only when you import/export backup files.</p>
-          <p>No access to camera, microphone, location, or contacts.</p>
-          <p>All permissions can be managed in iOS Settings.</p>
+          <h2>5. Backups You Export</h2>
+          <ul>
+            <li>The Import / Export screen creates a JSON backup containing exactly the data you've entered.</li>
+            <li>PDF exports (Service History, Motorcycle Profile) include only the fields from the matching motorcycle plus the hero photo if present.</li>
+            <li>You pick the destination (Files, iCloud Drive, email, AirDrop…). Once exported, the file is governed by the destination's privacy rules, not by Odollet.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>6. Data Security</h2>
-          <p>Your data is protected by iOS security features.</p>
-          <p>App data is sandboxed and encrypted at rest.</p>
-          <p>Only you can access your motorcycle records.</p>
-          <p>Deleting the app removes all stored data.</p>
+          <h2>6. Deleting Your Data</h2>
+          <ul>
+            <li>Uninstall the app to wipe every local record, photo and attachment on that device.</li>
+            <li>Settings → iCloud Sync → <strong>Erase iCloud Data</strong> wipes the private CloudKit database for this app without touching local data.</li>
+            <li>Calendar events the app created can be removed in the Calendar app; disabling Calendar Sync prevents new events from being added.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>7. Third-Party Services</h2>
-          <p><strong>We DO NOT use third-party analytics services.</strong></p>
-          <p><strong>We DO NOT integrate with social media platforms.</strong></p>
-          <p><strong>We DO NOT use advertising networks.</strong></p>
-          <p><strong>No data is shared with external companies.</strong></p>
+          <h2>7. Third Parties</h2>
+          <ul>
+            <li>The only services the app talks to are Apple's: APNs (push delivery), CloudKit (iCloud sync), EventKit (calendar), PhotoKit, Siri Intents.</li>
+            <li>All of them are governed by Apple's privacy policy and run within iOS's permission system.</li>
+            <li>No other third-party SDK, analytics service, or backend is integrated.</li>
+          </ul>
         </section>
 
         <section>
           <h2>8. Your Rights</h2>
-          <p>Complete control over your data.</p>
-          <p>Export your data anytime via backup feature.</p>
-          <p>Delete all data by removing the app.</p>
-          <p>No account registration or personal information required.</p>
+          <ul>
+            <li>Full control: every cloud-facing feature (sync, reminders, calendar, notifications) is opt-in and reversible.</li>
+            <li>Export or delete your data at any time through the app — no requests or accounts needed.</li>
+            <li>Revoke individual permissions any time from iOS Settings → Privacy &amp; Security.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>9. Policy Updates</h2>
-          <p>Privacy policy updates will be communicated via App Store updates.</p>
-          <p>For privacy-related questions, contact us through the App Store.</p>
-          <p>This policy is effective as of the app installation date.</p>
-          <p>We are committed to maintaining your privacy and data security.</p>
+          <h2>9. Updates &amp; Contact</h2>
+          <ul>
+            <li>Policy updates ship with new app versions via the App Store.</li>
+            <li>Questions or concerns? Use the App Store support link to reach the developer.</li>
+            <li>Effective date: the install or last update date of your current version.</li>
+          </ul>
         </section>
 
         <div class="back-to-home">
