@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from 'vue'
+import { RouterLink } from 'vue-router'
 
 const isVisible = ref(false)
 
@@ -11,6 +12,8 @@ const copyrightYears = computed(() => {
   const now = new Date().getFullYear()
   return now > COPYRIGHT_START_YEAR ? `${COPYRIGHT_START_YEAR}-${now}` : `${COPYRIGHT_START_YEAR}`
 })
+
+const APP_STORE_URL = 'https://apps.apple.com/app/id6751579293'
 
 onMounted(() => {
   setTimeout(() => {
@@ -66,12 +69,6 @@ const features = [
   }
 ]
 
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-}
 </script>
 
 <template>
@@ -79,13 +76,13 @@ const scrollToSection = (sectionId: string) => {
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container">
-        <div class="nav-brand">
-          <h2>Odollet</h2>
-        </div>
+        <RouterLink to="/" class="nav-brand" aria-label="Odollet home">
+          <span class="brand-logo">Odollet</span>
+        </RouterLink>
         <div class="nav-links">
-          <a href="#features" @click.prevent="scrollToSection('features')">Features</a>
-          <a href="#screenshots" @click.prevent="scrollToSection('screenshots')">Screenshots</a>
-          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="#features">Features</a>
+          <a href="#screenshots">Screenshots</a>
+          <RouterLink to="/privacy-policy">Privacy Policy</RouterLink>
         </div>
       </div>
     </nav>
@@ -98,16 +95,13 @@ const scrollToSection = (sectionId: string) => {
             Odometer Wallet for Motorcyclists
           </h1>
           <p class="hero-subtitle">
-            The smart, easy-to-use journal for every motorcyclist who values order, clarity, and more time on the road. 
-            Keep all your motorcycle records safe, neat, and accessible whenever you need them.
+            The focused iPhone logbook for every motorcyclist. Track mileage, fuel, expenses and service - all in one place, perfectly organized, always at hand.
           </p>
           <div class="hero-buttons">
-            <button class="btn-primary" @click="scrollToSection('screenshots')">
-              View Screenshots
-            </button>
-            <button class="btn-secondary" @click="scrollToSection('features')">
-              Learn More
-            </button>
+            <a :href="APP_STORE_URL" class="app-store-badge" target="_blank" rel="noopener">
+              <img src="/images/appstore.svg" alt="Download on the App Store" />
+            </a>
+            <a href="#features" class="btn-secondary">See Features</a>
           </div>
         </div>
         <div class="hero-image">
@@ -196,10 +190,10 @@ const scrollToSection = (sectionId: string) => {
     <section class="cta">
       <div class="container">
         <div class="cta-content">
-          <h2>Ready to Organize Your Motorcycle Life?</h2>
-          <p>Download Odollet today and keep your motorcycle records perfectly logged from the very first kilometer to the longest journey</p>
+          <h2>Start Your Motorcycle Logbook</h2>
+          <p>Free on the App Store. No account, no tracking, no ads.</p>
           <div class="cta-buttons">
-            <a href="https://apps.apple.com/app/id6751579293" class="app-store-badge" target="_blank" rel="noopener">
+            <a :href="APP_STORE_URL" class="app-store-badge" target="_blank" rel="noopener">
               <img src="/images/appstore.svg" alt="Download on the App Store" />
             </a>
           </div>
@@ -218,13 +212,13 @@ const scrollToSection = (sectionId: string) => {
           <div class="footer-section">
             <h4>Legal</h4>
             <ul>
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
+              <li><RouterLink to="/privacy-policy">Privacy Policy</RouterLink></li>
             </ul>
           </div>
           <div class="footer-section">
             <h4>Contact</h4>
-            <p>Download <a href="https://apps.apple.com/app/id6751579293" class="footer-app-link" target="_blank" rel="noopener">our app</a> for more information</p>
-            <p>For support and questions: <a href="mailto:info@odollet.com" class="footer-email-link">info@odollet.com</a></p>
+            <p>Download <a :href="APP_STORE_URL" class="footer-link" target="_blank" rel="noopener">our app</a> for more information</p>
+            <p>For support and questions: <a href="mailto:info@odollet.com" class="footer-link">info@odollet.com</a></p>
           </div>
         </div>
         <div class="footer-bottom">
@@ -233,8 +227,9 @@ const scrollToSection = (sectionId: string) => {
       </div>
     </footer>
   </div>
-</template>)
-  <style scoped>
+</template>
+
+<style scoped>
 .landing-page {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
@@ -261,11 +256,15 @@ const scrollToSection = (sectionId: string) => {
   align-items: center;
 }
 
-.nav-brand h2 {
-  margin: 0;
+.nav-brand {
+  text-decoration: none;
+}
+
+.brand-logo {
   color: #1a365d;
   font-weight: 700;
   font-size: 1.5rem;
+  line-height: 1;
 }
 
 .nav-links {
@@ -360,7 +359,7 @@ const scrollToSection = (sectionId: string) => {
   filter: brightness(1.1);
 }
 
-.footer-app-link {
+.footer-link {
   color: #667eea;
   font-weight: 600;
   text-decoration: none;
@@ -368,20 +367,7 @@ const scrollToSection = (sectionId: string) => {
   transition: all 0.3s ease;
 }
 
-.footer-app-link:hover {
-  color: #764ba2;
-  border-bottom-color: #764ba2;
-}
-
-.footer-email-link {
-  color: #667eea;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.footer-email-link:hover {
+.footer-link:hover {
   color: #764ba2;
   border-bottom-color: #764ba2;
 }
@@ -410,13 +396,14 @@ const scrollToSection = (sectionId: string) => {
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.2);
+  background: transparent;
   color: white;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  border: 2px solid white;
+  font-weight: 600;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
 
@@ -676,8 +663,12 @@ const scrollToSection = (sectionId: string) => {
 
 @media (max-width: 480px) {
   .nav-links {
-    flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .brand-logo {
+    font-size: 1.25rem;
   }
 
   .hero {

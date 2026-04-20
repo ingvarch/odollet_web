@@ -7,11 +7,9 @@ import { RouterLink } from 'vue-router'
     <!-- Navigation -->
     <nav class="nav">
       <div class="nav-container">
-        <div class="nav-brand">
-          <RouterLink to="/">
-            <h2>Odollet</h2>
-          </RouterLink>
-        </div>
+        <RouterLink to="/" class="nav-brand" aria-label="Odollet home">
+          <span class="brand-logo">Odollet</span>
+        </RouterLink>
         <div class="nav-links">
           <RouterLink to="/">Home</RouterLink>
         </div>
@@ -145,15 +143,15 @@ import { RouterLink } from 'vue-router'
   align-items: center;
 }
 
-.nav-brand a {
+.nav-brand {
   text-decoration: none;
 }
 
-.nav-brand h2 {
-  margin: 0;
+.brand-logo {
   color: #1a365d;
   font-weight: 700;
   font-size: 1.5rem;
+  line-height: 1;
 }
 
 .nav-links a {
