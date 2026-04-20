@@ -21,33 +21,48 @@ onMounted(() => {
 const features = [
   {
     icon: '🏍️',
-    title: 'Ride Logging',
-    description: 'Record all your rides with date, mileage, cost, and notes. Track your journey from the very first kilometer.'
+    title: 'Multi-Bike Garage',
+    description: 'Add every motorcycle you own with VIN, license plate, purchase info, and a full-width hero photo. Switch between bikes in a tap.'
   },
   {
-    icon: '💰',
-    title: 'Expense Tracking',
-    description: 'Log all motorcycle expenses including fuel, maintenance, insurance, and custom activities with detailed breakdowns.'
+    icon: '📝',
+    title: 'Flexible Log Entries',
+    description: 'Log washes, oil changes, inspections, refuels, insurance, rides, or define your own custom types with icons. Attach photos or scan receipts on the spot.'
+  },
+  {
+    icon: '⛽',
+    title: 'Fuel Economy',
+    description: 'Capture volume and price per liter on refuels. See your average consumption trend and spot when the numbers drift.'
   },
   {
     icon: '📊',
-    title: 'Visual Reports',
-    description: 'See clean monthly cards and yearly charts showing how much you rode and spent. Understand your riding patterns.'
+    title: 'Reports & Charts',
+    description: 'W / M / 3M / Y / A breakdowns for mileage and expenses. Apple Fitness–style summary cards plus category charts.'
   },
   {
-    icon: '📋',
-    title: 'Maintenance History',
-    description: 'Keep complete records of all maintenance activities and inspections for each motorcycle.'
+    icon: '🛠️',
+    title: 'Service Reminders',
+    description: 'Mileage-based ("every 5000 km") or date-based reminders. Insurance and registration expiries auto-create them; optional Apple Calendar sync.'
   },
   {
-    icon: '📱',
+    icon: '📄',
+    title: 'PDF Exports',
+    description: 'Share a year-grouped Service History or a one-page Motorcycle Profile as a crisp, vector-rendered PDF.'
+  },
+  {
+    icon: '☁️',
+    title: 'Optional iCloud Sync',
+    description: 'Flip one switch to sync bikes, entries, photos, and reminders across your Apple devices via your own private iCloud database. Off by default.'
+  },
+  {
+    icon: '🎤',
+    title: 'Siri & Widgets',
+    description: '"Hey Siri, log a refuel in Odollet." Ask for current mileage. Home Screen widget shows your active bike at a glance.'
+  },
+  {
+    icon: '🔒',
     title: 'Privacy First',
-    description: 'All data stored locally on your device. No accounts, no ads, no tracking. You control your information.'
-  },
-  {
-    icon: '💾',
-    title: 'Backup & Restore',
-    description: 'Export your data to JSON and save it securely. Import backups to restore everything on a new device.'
+    description: 'No account, no tracking, no ads, no third-party analytics. Every cloud feature is opt-in — your data stays yours.'
   }
 ]
 
