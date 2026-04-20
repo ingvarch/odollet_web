@@ -1,7 +1,16 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 const isVisible = ref(false)
+
+// Copyright range: show "2025" in the launch year, then "2025 – current year"
+// from the next January onwards. Recomputed on page load so the footer stays
+// correct without a deploy.
+const COPYRIGHT_START_YEAR = 2025
+const copyrightYears = computed(() => {
+  const now = new Date().getFullYear()
+  return now > COPYRIGHT_START_YEAR ? `${COPYRIGHT_START_YEAR}–${now}` : `${COPYRIGHT_START_YEAR}`
+})
 
 onMounted(() => {
   setTimeout(() => {
@@ -204,7 +213,7 @@ const scrollToSection = (sectionId: string) => {
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Odollet. All rights reserved.</p>
+          <p>&copy; {{ copyrightYears }} Odollet. All rights reserved.</p>
         </div>
       </div>
     </footer>
