@@ -3,13 +3,13 @@ import { ref, onMounted, computed } from 'vue'
 
 const isVisible = ref(false)
 
-// Copyright range: show "2025" in the launch year, then "2025 – current year"
+// Copyright range: show "2025" in the launch year, then "2025 - current year"
 // from the next January onwards. Recomputed on page load so the footer stays
 // correct without a deploy.
 const COPYRIGHT_START_YEAR = 2025
 const copyrightYears = computed(() => {
   const now = new Date().getFullYear()
-  return now > COPYRIGHT_START_YEAR ? `${COPYRIGHT_START_YEAR}–${now}` : `${COPYRIGHT_START_YEAR}`
+  return now > COPYRIGHT_START_YEAR ? `${COPYRIGHT_START_YEAR}-${now}` : `${COPYRIGHT_START_YEAR}`
 })
 
 onMounted(() => {
@@ -37,7 +37,7 @@ const features = [
   {
     icon: '📊',
     title: 'Reports & Charts',
-    description: 'W / M / 3M / Y / A breakdowns for mileage and expenses. Apple Fitness–style summary cards plus category charts.'
+    description: 'W / M / 3M / Y / A breakdowns for mileage and expenses. Apple Fitness-style summary cards plus category charts.'
   },
   {
     icon: '🛠️',
@@ -62,7 +62,7 @@ const features = [
   {
     icon: '🔒',
     title: 'Privacy First',
-    description: 'No account, no tracking, no ads, no third-party analytics. Every cloud feature is opt-in — your data stays yours.'
+    description: 'No account, no tracking, no ads, no third-party analytics. Every cloud feature is opt-in - your data stays yours.'
   }
 ]
 

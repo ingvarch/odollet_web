@@ -27,7 +27,7 @@ import { RouterLink } from 'vue-router'
         <section>
           <h2>1. Introduction</h2>
           <p>
-            Odollet ("Odometer Wallet") is a focused logbook for motorcyclists — track mileage, expenses, fuel and maintenance, set service reminders, and, if you choose, sync across your own Apple devices. This Privacy Policy explains what the app does and does not do with your data.
+            Odollet ("Odometer Wallet") is a focused logbook for motorcyclists - track mileage, expenses, fuel and maintenance, set service reminders, and, if you choose, sync across your own Apple devices. This Privacy Policy explains what the app does and does not do with your data.
           </p>
         </section>
 
@@ -45,7 +45,7 @@ import { RouterLink } from 'vue-router'
           <h2>3. Where Your Data Lives</h2>
           <ul>
             <li>By default, all motorcycles, log entries, reminders, photos, attachments and settings are stored locally on your device (iOS sandbox, encrypted at rest).</li>
-            <li>When you enable <strong>iCloud Sync</strong> (Settings → iCloud Sync), the same data is replicated through your own private CloudKit database so your other Apple devices can see it. This is end-to-end between you and Apple — we never see the data.</li>
+            <li>When you enable <strong>iCloud Sync</strong> (Settings → iCloud Sync), the same data is replicated through your own private CloudKit database so your other Apple devices can see it. This is end-to-end between you and Apple - we never see the data.</li>
             <li><strong>Calendar Sync</strong> (optional) writes date-based service reminders into your Apple Calendar via iOS's EventKit. Events stay inside your calendar; the app does not read them back.</li>
           </ul>
         </section>
@@ -53,13 +53,13 @@ import { RouterLink } from 'vue-router'
         <section>
           <h2>4. Permissions the App Asks For</h2>
           <ul>
-            <li><strong>Notifications</strong> — only used to remind you about upcoming services and expiring insurance/registration. Optional.</li>
-            <li><strong>Photo Library (read)</strong> — only when you pick a hero photo or attach photos to a log entry. Only the images you explicitly pick leave the library.</li>
-            <li><strong>Camera</strong> — only used on demand by the built-in receipt scanner. No photo or video is captured in the background.</li>
-            <li><strong>Calendar</strong> — only requested if you enable Calendar Sync for service reminders. Write-only, scoped to events the app creates.</li>
-            <li><strong>iCloud (CloudKit)</strong> — only if you enable iCloud Sync. Uses your Apple ID's private database. No public or shared CloudKit scopes.</li>
-            <li><strong>Siri / Shortcuts</strong> — on-device intents that act on the active motorcycle; iOS decides what Siri learns from your usage, not the app.</li>
-            <li><strong>Files</strong> — only when you import or export a backup.</li>
+            <li><strong>Notifications</strong> - only used to remind you about upcoming services and expiring insurance/registration. Optional.</li>
+            <li><strong>Photo Library (read)</strong> - only when you pick a hero photo or attach photos to a log entry. Only the images you explicitly pick leave the library.</li>
+            <li><strong>Camera</strong> - only used on demand by the built-in receipt scanner. No photo or video is captured in the background.</li>
+            <li><strong>Calendar</strong> - only requested if you enable Calendar Sync for service reminders. Write-only, scoped to events the app creates.</li>
+            <li><strong>iCloud (CloudKit)</strong> - only if you enable iCloud Sync. Uses your Apple ID's private database. No public or shared CloudKit scopes.</li>
+            <li><strong>Siri / Shortcuts</strong> - on-device intents that act on the active motorcycle; iOS decides what Siri learns from your usage, not the app.</li>
+            <li><strong>Files</strong> - only when you import or export a backup.</li>
             <li>No location, contacts, microphone, HealthKit, or motion data is accessed.</li>
           </ul>
         </section>
@@ -95,7 +95,7 @@ import { RouterLink } from 'vue-router'
           <h2>8. Your Rights</h2>
           <ul>
             <li>Full control: every cloud-facing feature (sync, reminders, calendar, notifications) is opt-in and reversible.</li>
-            <li>Export or delete your data at any time through the app — no requests or accounts needed.</li>
+            <li>Export or delete your data at any time through the app - no requests or accounts needed.</li>
             <li>Revoke individual permissions any time from iOS Settings → Privacy &amp; Security.</li>
           </ul>
         </section>
