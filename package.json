@@ -1,12 +1,8 @@
 {
   "name": "odollet-landing",
-  "packageManager": "yarn@4.9.1",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "workspaces": [
-    "."
-  ],
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",

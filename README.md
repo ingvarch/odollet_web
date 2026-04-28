@@ -1,5 +1,17 @@
-# Vue 3 + TypeScript + Vite
+# odollet-landing
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Vue 3 + TypeScript + Vite landing for odollet, deployed to Cloudflare via Wrangler.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Requirements
+
+- [Bun](https://bun.sh) 1.3+
+
+## Scripts
+
+```sh
+bun install         # install dependencies
+bun run dev         # start Vite dev server
+bun run build       # type-check (vue-tsc) and build to dist/
+bun run preview     # preview the production build
+bunx wrangler pages deploy dist   # deploy dist/ to Cloudflare Pages
+```
