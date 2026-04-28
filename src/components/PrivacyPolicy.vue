@@ -241,12 +241,12 @@ import { RouterLink } from 'vue-router'
   margin-bottom: 0.5rem;
 }
 
-.policy-content a {
-  color: #667eea;
+.policy-content a:not(.btn-primary) {
+  color: var(--brand-500);
   text-decoration: none;
 }
 
-.policy-content a:hover {
+.policy-content a:not(.btn-primary):hover {
   text-decoration: underline;
 }
 
@@ -254,24 +254,27 @@ import { RouterLink } from 'vue-router'
   text-align: center;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid var(--ink-100);
 }
 
 .btn-primary {
-  background: #667eea;
-  color: white;
-  padding: 1rem 2rem;
+  background: var(--ride-grad);
+  color: #fff;
+  padding: 0.9rem 1.75rem;
   border-radius: 12px;
   font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
   text-decoration: none;
   display: inline-block;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 8px 20px rgba(91, 107, 255, 0.25);
 }
 
 .btn-primary:hover {
-  background: #5a67d8;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 12px 28px rgba(91, 107, 255, 0.35);
+  filter: brightness(1.05);
 }
 
 /* Responsive Design */
