@@ -8,6 +8,7 @@ import { RouterLink } from 'vue-router'
     <nav class="nav">
       <div class="nav-container">
         <RouterLink to="/" class="nav-brand" aria-label="Odollet home">
+          <img src="/images/AppIcon.jpg" alt="" class="brand-icon" aria-hidden="true" />
           <span class="brand-logo">Odollet</span>
         </RouterLink>
         <div class="nav-links">
@@ -125,40 +126,54 @@ import { RouterLink } from 'vue-router'
 
 <style scoped>
 .privacy-policy {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sans);
   line-height: 1.6;
-  color: #2d3748;
+  color: var(--ink-700);
 }
 
 /* Navigation */
 .nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  inset: 0 0 auto 0;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(11, 16, 32, 0.06);
   z-index: 1000;
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0.875rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
   text-decoration: none;
+  color: var(--ink-900);
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 22%;
+  object-fit: cover;
+  box-shadow: 0 6px 14px rgba(11, 16, 32, 0.18);
+  background: #fff;
 }
 
 .brand-logo {
-  color: #1a365d;
-  font-weight: 700;
-  font-size: 1.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-900);
   line-height: 1;
 }
 
