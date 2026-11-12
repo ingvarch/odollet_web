@@ -7,62 +7,114 @@
 }
 
 :root {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Chakra Petch', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Chakra Petch', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --ink-900: #0B1020;
-  --ink-700: #1E2640;
-  --ink-500: #475069;
-  --ink-300: #8B93AB;
-  --ink-100: #E5E8F0;
-  --ink-50: #F5F6FA;
+  /* Cockpit & Machined Aluminum Surfaces */
+  --bg-obsidian: #090B10;
+  --bg-cockpit: #0E121B;
+  --bg-panel: #131926;
+  --bg-panel-elevated: #182030;
+  --bg-shell: rgba(226, 234, 248, 0.035);
 
-  --brand-500: #5B6BFF;
-  --brand-600: #4858EE;
-  --accent-500: #B847E2;
-  --accent-600: #9D2BC8;
-  --ride-grad: linear-gradient(95deg, #5B6BFF 0%, #B847E2 100%);
-  --hero-grad: radial-gradient(120% 100% at 80% 0%, rgba(184, 71, 226, 0.18) 0%, transparent 60%),
-               radial-gradient(120% 100% at 0% 100%, rgba(91, 107, 255, 0.18) 0%, transparent 55%),
-               linear-gradient(180deg, #0B1020 0%, #131A33 100%);
+  /* Tinted Phosphor & Anodized Steel Ink */
+  --ink-primary: #F3F6FA;
+  --ink-secondary: #9CA8BC;
+  --ink-muted: #647187;
+
+  /* Authentic Odollet Telemetry Accents (from AppIcon & iOS UI) */
+  --redline: #FF6B00;
+  --redline-bright: #FF852B;
+  --redline-dim: rgba(255, 107, 0, 0.14);
+  --telemetry-blue: #1E88FF;
+  --telemetry-blue-dim: rgba(30, 136, 255, 0.15);
+  --telemetry-green: #22C55E;
+  --telemetry-green-dim: rgba(34, 197, 94, 0.14);
+  --navy-dial: #081E4A;
+
+  /* Structural Hairlines */
+  --hairline: rgba(226, 234, 248, 0.08);
+  --hairline-strong: rgba(226, 234, 248, 0.16);
+  --inner-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  /* Custom Weighted Motion Curves */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 
   font-family: var(--font-sans);
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light;
-  color: var(--ink-700);
-  background-color: #ffffff;
+  color-scheme: dark;
+  color: var(--ink-primary);
+  background-color: var(--bg-obsidian);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-color: #263147 #090B10;
+  scrollbar-width: thin;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(255, 107, 0, 0.28);
+  color: var(--ink-primary);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232D42;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #33415E;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-obsidian);
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--bg-obsidian);
+  color: var(--ink-primary);
+  overflow-x: hidden;
+  caret-color: var(--redline);
 }
 
 #app {
-  min-height: 100vh;
-}
-
-html {
-  scroll-behavior: smooth;
+  min-height: 100dvh;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: inherit;
+  text-wrap: balance;
 }
 
 p {
   margin: 0;
+  text-wrap: pretty;
 }
 
 ul, ol {
@@ -70,11 +122,27 @@ ul, ol {
   padding: 0;
 }
 
+a {
+  text-underline-offset: 4px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
 button:focus-visible,
-a:focus-visible {
-  outline: 2px solid var(--brand-500);
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--redline);
   outline-offset: 3px;
   border-radius: 6px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "zero" 1;
 }
 
 .sr-only {
@@ -87,4 +155,57 @@ a:focus-visible {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+/* Double-Bezel Machined Enclosure Utility */
+.double-bezel {
+  padding: 6px;
+  border-radius: 24px;
+  background: var(--bg-shell);
+  border: 1px solid var(--hairline);
+}
+
+.double-bezel-core {
+  border-radius: 18px;
+  background: var(--bg-panel);
+  border: 1px solid var(--hairline);
+  box-shadow: var(--inner-highlight);
+}
+
+/* Route Page Transition */
+.route-swap-enter-active {
+  transition: opacity 380ms var(--ease-out), transform 380ms var(--ease-out), filter 380ms var(--ease-out);
+}
+
+.route-swap-leave-active {
+  transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out), filter 220ms var(--ease-out);
+}
+
+.route-swap-enter-from {
+  opacity: 0;
+  transform: translateY(10px) scale(0.992);
+  filter: blur(3px);
+}
+
+.route-swap-leave-to {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.995);
+  filter: blur(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .route-swap-enter-active,
+  .route-swap-leave-active {
+    transition: opacity 180ms ease !important;
+  }
+
+  .route-swap-enter-from,
+  .route-swap-leave-to {
+    transform: none !important;
+    filter: none !important;
+  }
 }
