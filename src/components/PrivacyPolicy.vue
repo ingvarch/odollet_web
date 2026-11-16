@@ -85,6 +85,7 @@ const copyrightYears = computed(() => {
                 <li>We do <strong>not</strong> use analytics, crash reporting, or tracking SDKs.</li>
                 <li>We do <strong>not</strong> show advertising and we do <strong>not</strong> integrate with social networks.</li>
                 <li>No account, email, or sign-in is required.</li>
+                <li>The optional <strong>Supporter</strong> subscription is sold and billed by Apple through the App Store. The app only learns from Apple whether your subscription is active; it never sees your name, email, or payment details.</li>
               </ul>
             </section>
 
@@ -120,7 +121,7 @@ const copyrightYears = computed(() => {
             <section class="policy-section">
               <h2>5. Backups You Export</h2>
               <ul>
-                <li>The Import / Export screen creates a JSON backup containing exactly the data you’ve entered, including ride metadata and the compressed point tracks of any rides you’ve recorded.</li>
+                <li>The Import / Export screen creates a ZIP backup containing exactly the data you’ve entered: a JSON file with your records, ride metadata and the compressed point tracks of any rides you’ve recorded, plus your motorcycle photos and log entry attachments such as receipts.</li>
                 <li>PDF exports (Service History, Motorcycle Profile) include only the fields from the matching motorcycle plus the hero photo if present.</li>
                 <li>Ride share posters and recap videos you generate are produced on-device and shared only when you explicitly choose a destination.</li>
                 <li>You pick the destination (Files, iCloud Drive, email, AirDrop…). Once exported, the file is governed by the destination’s privacy rules, not by Odollet.</li>
@@ -140,7 +141,7 @@ const copyrightYears = computed(() => {
             <section class="policy-section">
               <h2>7. Third Parties</h2>
               <ul>
-                <li>The only services the app talks to are Apple’s: Core Location (GPS), MapKit (map rendering), APNs (push delivery), ActivityKit (Live Activities), CloudKit (iCloud sync), EventKit (calendar), PhotoKit, AVFoundation (video rendering), Siri Intents.</li>
+                <li>The only services the app talks to are Apple’s: Core Location (GPS), MapKit (map rendering), APNs (push delivery), ActivityKit (Live Activities), CloudKit (iCloud sync), EventKit (calendar), PhotoKit, AVFoundation (video rendering), Siri Intents, WeatherKit (the weather at a ride’s start point), StoreKit (the optional subscription and App Store rating requests).</li>
                 <li>All of them are governed by Apple’s privacy policy and run within iOS’s permission system.</li>
                 <li>No other third-party SDK, analytics service, or backend is integrated.</li>
               </ul>
